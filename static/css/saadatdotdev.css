@@ -5,8 +5,12 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
-    background-color: #FFFFFF;
+    background-color: white;
     font-family: "Open Sans", sans-serif;
 }
 
@@ -49,12 +53,24 @@ a {
     border-width: 0px;
 }
 
+
+.card-footer, .card-footer:last-child {
+    background-color: rgba(0,0,0,.125);
+    border-radius: 0%;
+    border-top-width: 0px;
+}
+
 .btn-outline-primary {
     border-color: #28abb9;
     color: #28abb9;
 }
 
 .btn-outline-primary:hover {
+    background-color: #28abb9;
+    border-color: #28abb9;
+}
+
+.btn-outline-primary.dropdown-toggle.show {
     background-color: #28abb9;
     border-color: #28abb9;
 }
@@ -69,4 +85,14 @@ a {
   top: 50%;
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
+}
+
+.cardModern {
+    border-style: solid;
+    border-width: 3px;
+    background-color: white;
+}
+
+.slightlyStronk {
+    font-weight: 600;
 }
