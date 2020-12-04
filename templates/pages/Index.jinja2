@@ -37,5 +37,15 @@
 
 {% block additional_scripts %}
     <script src="https://cdn.jsdelivr.net/npm/typeit@7.0.4/dist/typeit.min.js"></script>
-    <script src="{{ url_for('static', filename='js/saadatdotdev.js') }}"></script>
+    <script type="text/javascript">
+        new TypeIt("#introText", {
+            strings: ["Nice to meet you!", "I'm Mirza Saadat Baig"],
+            speed: 75,
+            cursor: false,
+            loop: false,
+            waitUntilVisible: false,
+            breakLines: false,
+            nextStringDelay: 1000,
+        }).go();
+    </script>
 {% endblock %}
