@@ -1,0 +1,41 @@
+{% extends "_Foundation.jinja2" %}
+
+{% block content %}
+    <div class="container">
+        <div class="row justify-content-center align-items-center">
+            <div class="col-sm pb-5">
+                <img class="pfp mx-auto d-block img-fluid" src="https://pbs.twimg.com/profile_images/1327187176120078336/O2xoBng2.jpg">
+            </div>
+            <div class="col">
+                <div class="card pb-5 mx-auto">
+                    <div class="card-body">
+                        <h2 id="introText"></h2>
+                        <h5 class="card-subtitle mb-2 text-muted">Software Engineer, Reverse Engineer and Translator</h5>
+                        <hr>
+                        <p class="">
+                            Hello! My name is Saadat and I'm a 22 year old Software Engineer from Germany.<br>
+                            <br>
+                            I usually spend my time either reversing and breaking binaries, at the gym / basketball court or with my family.<br>
+                            <br>
+                            If you're a recruiter and would like a copy of my CV or other documents, send inquiries to <a href="mailto:me@saadat.dev">me@saadat.dev</a>.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-center align-items-center">
+            <div class="col-sm">
+                <!-- YEET -->
+            </div>
+            <div class="col">
+                <a class="btn btn btn-outline-primary btn-block" href="{{ url_for('HomeBP.projects') }}" role="button">View all of my (OSS-) projects</a>
+                <a class="btn btn btn-outline-primary btn-block" href="{{ url_for('HomeBP.projects') }}" role="button">Go to my blog</a>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block additional_scripts %}
+    <script src="https://cdn.jsdelivr.net/npm/typeit@7.0.4/dist/typeit.min.js"></script>
+    <script src="{{ url_for('static', filename='js/saadatdotdev.js') }}"></script>
+{% endblock %}
