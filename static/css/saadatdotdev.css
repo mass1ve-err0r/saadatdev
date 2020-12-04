@@ -1,0 +1,72 @@
+/* overrides */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #FFFFFF;
+    font-family: "Open Sans", sans-serif;
+}
+
+a {
+    color: #28abb9;
+    text-decoration: none;
+}
+
+/* bootstrap overrides */
+.navbar {
+    background: rgba(255, 255, 255, 0.2) !important;
+    z-index: 2;
+    backdrop-filter: blur(10px) saturate(125%);
+    -webkit-backdrop-filter: blur(10px) saturate(125%);
+}
+
+.navbar-nav > li > .dropdown-menu {
+    background: rgba(255, 255, 255, 0.2) !important;
+    z-index: 2;
+    backdrop-filter: blur(10px) saturate(125%);
+    -webkit-backdrop-filter: blur(10px) saturate(125%);
+}
+
+.navbar-nav > li > .dropdown-menu > a{
+    color: black;
+}
+
+.navbar-nav > li > .dropdown-menu > a:hover {
+    background-color: #28abb9;
+    color: white;
+    border-radius: 3px;
+}
+
+.nav-item {
+    font-size: 18px;
+}
+
+.card {
+    border-style: none;
+    border-width: 0px;
+}
+
+.btn-outline-primary {
+    border-color: #28abb9;
+    color: #28abb9;
+}
+
+.btn-outline-primary:hover {
+    background-color: #28abb9;
+    border-color: #28abb9;
+}
+
+/* customs */
+.pfp {
+    border-radius: 50%;
+}
+.vcenter {
+    margin: 0;
+  position: absolute;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
