@@ -31,6 +31,10 @@
         <!-- OpenSans, AnimateCSS & custom CSS -->
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700">
         <link rel="stylesheet" href="{{ url_for('static', filename='css/saadatdotdev.css') }}">
+
+        <!-- Additional Head -->
+        {% block additional_head %}
+        {% endblock %}
     </head>
     <body class="d-flex flex-column min-vh-100">
         <!-- Navbar -->
