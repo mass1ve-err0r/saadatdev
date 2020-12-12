@@ -31,13 +31,6 @@ async def blog(request):
     return redirect('https://blog.saadat.dev/')
 
 
-@HomeBP.route('/about')
-async def about_me(request):
-    template = J2env.get_template('/pages/About.jinja2')
-    _html = await template.render_async(title="About Me | Saadat Baig Development")
-    return html(_html)
-
-
 @HomeBP.route('/contact')
 async def contact(request):
     template = J2env.get_template('/pages/Contact.jinja2')
