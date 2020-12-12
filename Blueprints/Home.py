@@ -31,10 +31,26 @@ async def blog(request):
     return redirect('https://blog.saadat.dev/')
 
 
-@HomeBP.route('/contact')
+@HomeBP.route('/contact', methods=['GET', 'POST'])
 async def contact(request):
+    err_type = -1
+    if request.method == 'POST':
+        if request.form.get('emailInput') != None:
+            if request.form.get('subjectInput') != None:
+                if request.form.get('messageInput') != None:
+                    user_mesg = request.form.get('messageInput')
+                    user_subj = request.form.get('subjectInput')
+                    user_mail = request.form.get('emailInput')
+                    err_type = 0
+                else:
+                    err_type = 3
+            else:
+                err_type = 2
+        else:
+            err_type = 1
     template = J2env.get_template('/pages/Contact.jinja2')
-    _html = await template.render_async(title="Contact | Saadat Baig Development")
+    _html = await template.render_async(title="Contact | Saadat Baig Development",
+                                        bannerType=err_type)
     return html(_html)
 
 
