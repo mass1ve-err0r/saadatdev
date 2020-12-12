@@ -1,0 +1,73 @@
+{% extends "_Foundation.jinja2" %}
+
+{% block content %}
+    <div class="container">
+        <h1 class="pt-3 pb-1">Contact</h1>
+        <div class="row pb-2">
+            <div class="col">
+                <p>
+                    Feel free to contact me through all available socials. You can usually expect a reply within 72 hours.<br>
+                    Or use the form below to reach me!
+                </p>
+            </div>
+        </div>
+        <div class="row pb-3">
+            <div class="col">
+                <div class="card cardModern">
+                    <div class="card-body">
+                        <form id="emailForm" action="{{ url_for('HomeBP.contact') }}" method="post">
+                            <div class="row row-cols-1 row-cols-md-2">
+                                <div class="col">
+                                    <div class="form-group p-1 pb-2">
+                                        <label for="emailInputLabel">Email Address</label>
+                                        <input type="email" class="form-control" id="emailInputLabel" name="emailInput" placeholder="max@example.com" required="true">
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="form-group p-1 pb-2">
+                                        <label for="topicInputLabel">Subject</label>
+                                        <input type="text" class="form-control" id="topicInputLabel" name="subjectInput" placeholder="Support Request" required="true">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row p-1 pb-3">
+                                <div class="col">
+                                    <div class="form-group">
+                                        <label for="messageTextArea">Message</label>
+                                        <textarea class="form-control" id="messageTextArea" rows="10" name="messageInput" placeholder="Your message" required="true"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row p-1 pb-2">
+                                <div class="col">
+                                    <button type="submit" class="btn btn btn-outline-primary btn-block">Send Email</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                {% if bannerType == 0 %}
+                    <div class="alert alert-success" role="alert">
+                        <strong>Thank You!</strong> Your mail is on it's way to me :-)
+                    </div>
+                {% elif bannerType == 1 %}
+                    <div class="alert alert-warning" role="alert">
+                        <strong>Email Missing!</strong> Please check your email input.
+                    </div>
+                {% elif bannerType == 2 %}
+                    <div class="alert alert-warning" role="alert">
+                        <strong>Subject Missing!</strong> Please add a subject before sending the mail!
+                    </div>
+                {% elif bannerType == 3 %}
+                    <div class="alert alert-warning" role="alert">
+                        <strong>Message Missing!</strong> Please add a message before sending the mail!
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+{% endblock %}
