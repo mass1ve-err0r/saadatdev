@@ -47,7 +47,8 @@
                                 <div class="col">
                                     <div class="form-group p-1 pb-2">
                                         <label for="topicInputLabel">Subject</label>
-                                        <input type="text" class="form-control" id="topicInputLabel" name="subjectInput" placeholder="Support Request" required="true">
+                                        <input type="text" class="form-control" id="topicInputLabel" name="subjectInput" placeholder="Support Request" required="true" maxlength="200">
+                                        <small class="float-right text-muted">Max characters: 200</small>
                                     </div>
                                 </div>
                             </div>
@@ -55,7 +56,8 @@
                                 <div class="col">
                                     <div class="form-group">
                                         <label for="messageTextArea">Message</label>
-                                        <textarea class="form-control" id="messageTextArea" rows="10" name="messageInput" placeholder="Your message" required="true"></textarea>
+                                        <textarea class="form-control" id="messageTextArea" rows="10" name="messageInput" placeholder="Your message" required="true" maxlength="1500"></textarea>
+                                        <small class="float-right text-muted">Max characters: 1500</small>
                                     </div>
                                 </div>
                             </div>
