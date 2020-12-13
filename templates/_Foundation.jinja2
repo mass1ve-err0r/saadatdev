@@ -28,9 +28,11 @@
         <!-- Bootstrap 5.0 CSS -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha2/css/bootstrap.min.css" integrity="sha384-DhY6onE6f3zzKbjUPRc2hOzGAdEf4/Dz+WJwBvEYL/lkkIsI3ihufq9hk9K4lVoK" crossorigin="anonymous">
 
-        <!-- OpenSans, AnimateCSS & custom CSS -->
+        <!-- OpenSans, favicon & custom CSS -->
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700">
         <link rel="stylesheet" href="{{ url_for('static', filename='css/saadatdotdev.css') }}">
+        <link rel="icon" href="{{ url_for('static', filename='favicon/favicon.ico') }}">
+        <link rel="apple-touch-icon" href="{{ url_for('static', filename='favicon/apple-touch-icon.png') }}">
 
         <!-- Additional Head -->
         {% block additional_head %}

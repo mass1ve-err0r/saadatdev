@@ -11,6 +11,27 @@
                 </p>
             </div>
         </div>
+        <div class="row pb-2">
+            <div class="col">
+                {% if bannerType == 0 %}
+                    <div class="alert alert-success" role="alert">
+                        <strong>Thank You!</strong> Your mail is on it's way to me :-)
+                    </div>
+                {% elif bannerType == 1 %}
+                    <div class="alert alert-warning" role="alert">
+                        <strong>Email Missing!</strong> Please check your email input.
+                    </div>
+                {% elif bannerType == 2 %}
+                    <div class="alert alert-warning" role="alert">
+                        <strong>Subject Missing!</strong> Please add a subject before sending the mail!
+                    </div>
+                {% elif bannerType == 3 %}
+                    <div class="alert alert-warning" role="alert">
+                        <strong>Message Missing!</strong> Please add a message before sending the mail!
+                    </div>
+                {% endif %}
+            </div>
+        </div>
         <div class="row pb-3">
             <div class="col">
                 <div class="card cardModern">
@@ -46,27 +67,6 @@
                         </form>
                     </div>
                 </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col">
-                {% if bannerType == 0 %}
-                    <div class="alert alert-success" role="alert">
-                        <strong>Thank You!</strong> Your mail is on it's way to me :-)
-                    </div>
-                {% elif bannerType == 1 %}
-                    <div class="alert alert-warning" role="alert">
-                        <strong>Email Missing!</strong> Please check your email input.
-                    </div>
-                {% elif bannerType == 2 %}
-                    <div class="alert alert-warning" role="alert">
-                        <strong>Subject Missing!</strong> Please add a subject before sending the mail!
-                    </div>
-                {% elif bannerType == 3 %}
-                    <div class="alert alert-warning" role="alert">
-                        <strong>Message Missing!</strong> Please add a message before sending the mail!
-                    </div>
-                {% endif %}
             </div>
         </div>
     </div>
