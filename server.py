@@ -5,6 +5,35 @@ load_dotenv()
 from sanic import Sanic
 app = Sanic("saadatdotdev")
 app.static('/static', './static')
+app.config.update({
+    "PROXIES_COUNT": 1,
+    "REAL_IP_HEADER": "X-Real-IP",
+    "FORWARDED_SECRET": "placeholder_secret"
+})
+
+# -*- Sanic Extensions -*-
+from sanic_redis_ext import RedisExtension
+app.config.update({
+    "REDIS_HOST": "127.0.0.1",
+    "REDIS_PORT": 6379,
+    "REDIS_DATABASE": None,
+    "REDIS_SSL": None,
+    "REDIS_ENCODING": None,
+    "REDIS_MIN_SIZE_POOL": 1,
+    "REDIS_MAX_SIZE_POOL": 10
+})
+RedisExtension(app)
+
+from sanic_motor import BaseModel
+app.config.update({
+    "MOTOR_URI": 'mongodb://localhost:27017/placeholder_db',
+})
+BaseModel.init_app(app)
+
+
+class EMailObject(BaseModel):
+    __coll__ = 'placeholder_collection'
+    __unique_fields__ = ['date']
 
 
 # -*- Jinja2 setup -*-
@@ -15,7 +44,7 @@ J2env = Environment(loader=PackageLoader('server', './templates'),
 J2env.globals["url_for"] = app.url_for
 
 
-# -*- Sanic Extensions -*-
+# -*- Custom Exception Handler -*-
 from sanic.exceptions import SanicException
 from sanic.response import html
 @app.exception(SanicException)
@@ -31,4 +60,4 @@ app.blueprint(HomeBP)
 
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=8000, debug=True)
+    app.run(host="127.0.0.1", port=8000, access_log=False)
