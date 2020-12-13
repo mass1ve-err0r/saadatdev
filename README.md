@@ -10,7 +10,7 @@
 - redis
 	- Being the ultra-fast i/o database of choice, redis is used as IP cache for the custom anti-spam measurement. I could've used existing solutions but then again, no fun if you don't do it yourself.
 - MongoDB
-	- Deployed as message broker, it caches messages sent through the contact form, which then get handled by the custom emailing solution _...which isn't really an email agent._ It's a discord bot fetching and relaying the messages, go [HERE](https://github.com/mass1ve-err0r/Mango) to view the source.
+	- Deployed as message broker, it caches messages sent through the contact form, which then get handled by the custom emailing solution _...which isn't really an email agent._ It's a discord bot fetching and relaying the messages.
 
 #### Frontend
 
@@ -28,6 +28,13 @@ The contact form is probably the weakest link in any website because you have to
 - EMail over 200 chars.
 
 or empty fields. Server-Side checks are additionally there for the contact route as it's the only one accepting POSTs.
+
+### Message Relay
+When you use the contact form and submit, your message gets stored (with current UTC timestamp) inside mongo. From there, a discord bot fetches the messages hourly and relays them to my private server and pings me.
+
+This is basically my solution to not having the need to setup a proper mail server, it's just too much work for something which won't be used often (I think).
+
+You can view the source if you're interested [HERE](https://github.com/mass1ve-err0r/Mango).
 
 ### IP Logging / Anti-Spam
 Whenever you open the contact page, your actual IP will be logged to redis. This is for safety reasons to avoid people sending me junk / bot my website and thus cause outages or overly big spam. If you peek throught he code you'll see per IP the limit is 200 accesses per day, regardless if you send me an email or not.
