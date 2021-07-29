@@ -1,5 +1,8 @@
-# Created by https://www.toptal.com/developers/gitignore/api/macos,pycharm+all,venv
-# Edit at https://www.toptal.com/developers/gitignore?templates=macos,pycharm+all,venv
+# Created by https://www.toptal.com/developers/gitignore/api/macos,pycharm+all,venv,dotenv
+# Edit at https://www.toptal.com/developers/gitignore?templates=macos,pycharm+all,venv,dotenv
+
+### dotenv ###
+*.env
 
 ### macOS ###
 # General
@@ -40,6 +43,9 @@ Temporary Items
 .idea/**/usage.statistics.xml
 .idea/**/dictionaries
 .idea/**/shelf
+
+# AWS User-specific
+.idea/**/aws.xml
 
 # Generated files
 .idea/**/contentModel.xml
@@ -133,4 +139,4 @@ pyvenv.cfg
 .venv
 pip-selfcheck.json
 
-# End of https://www.toptal.com/developers/gitignore/api/macos,pycharm+all,venv
+# End of https://www.toptal.com/developers/gitignore/api/macos,pycharm+all,venv,dotenv
